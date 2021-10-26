@@ -96,15 +96,16 @@ const hungry = [
 // 15b. Using a loop, add each item from the hungry array as span elements/tags to the bottom of the document/webpage
 // createElement!!! before appending see: Example 2 (Using userForm from example 1) in domEvents.js
 for (words of hungry){
-  const hungrySpan = document.createElement('span');
-  hungrySpan.innerText = words;
-  body.append(hungrySpan);
+  const spanHungry = document.createElement('span');
+  spanHungry.innerHTML = words;
+  body.append(spanHungry);
 }
 
+
 //Not quite...
-// hungry.createElement(`span`);
 // for (i = 0; i < hungry.length; i++){
+//   hungry.createElement(`span`);
 //   body.append(
-//     hungry[i].innerHTML = `${hungry[i]}`
+//     hungry[i].innerText = `${hungry[i]}`
 //     );
 // }
