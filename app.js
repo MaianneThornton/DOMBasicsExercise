@@ -70,3 +70,41 @@ aTag.insertAdjacentElement(`afterend`, h5);
 // 13. Using remove, remove the "Jay's Beef" li (NOTE: You will need to select the li first)
 const firstLi = document.querySelector(`li`);
 firstLi.remove();
+
+//BONUS SECTION | BONUS SECTION
+// 14a. Select all the divs and set it to a const variable called divs.
+const divs = document.querySelectorAll(`div`);
+// console.log(divs);
+
+// 14b. Using classList, TOGGLE the "background" class on for all the divs (NOTE: You will need a loop to do this)
+for (d of divs){
+  d.classList.toggle(`background`);
+}
+
+// 15a. Create an array called hungry with the following string values "Thanks", "A", "Lot", "Now", "I", "Am", "Hungry"
+const hungry = [
+  "Thanks",
+  "A",
+  "Lot",
+  "Now",
+  "I",
+  "Am",
+  "Hungry"
+];
+// console.log(hungry);
+
+// 15b. Using a loop, add each item from the hungry array as span elements/tags to the bottom of the document/webpage
+// createElement!!! before appending see: Example 2 (Using userForm from example 1) in domEvents.js
+for (words of hungry){
+  const hungrySpan = document.createElement('span');
+  hungrySpan.innerText = words;
+  body.append(hungrySpan);
+}
+
+//Not quite...
+// hungry.createElement(`span`);
+// for (i = 0; i < hungry.length; i++){
+//   body.append(
+//     hungry[i].innerHTML = `${hungry[i]}`
+//     );
+// }
