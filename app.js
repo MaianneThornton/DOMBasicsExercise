@@ -13,6 +13,9 @@ const centered = document.getElementsByClassName(`center`);
 // 4. Using querySelector, select the first div with the info for Gino's East inside of it and set it to a const variable called ginosEast.
 const ginosEast = document.querySelector(`div`);
 // console.log(ginosEast);
+// OR 
+// const ginosEast = document.querySelector(`#ginos`);
+
 
 // 5. Using querySelectorAll, select all the p elements and set them to a const variable called pTags
 const pTags = document.querySelectorAll(`p`);
@@ -20,14 +23,18 @@ const pTags = document.querySelectorAll(`p`);
 
 // 6a. Select the h1 (You can use whichever selector you want) and set it to a const variable called h1.
 const h1 = document.querySelector(`h1`);
+// OR
+// Using getElementsByTagName will return an HTMLCollection with the h1 at the index of 0
+// const h1 = document.getElementsByTagName(`h1`);
 // console.log(h1);
 
 // 6b. Use inner text to change the text to say "Matt's Favorite Places To Eat In Sweet Home Chicago!"
 h1.innerText = `Matt's Favorite Places To Eat In Sweet Home Chicago!`;
-// console.log(h1);
 
 // 7a. Select the div with the id of "others" and set it to a const variable called others.
 const others = document.getElementById(`others`);
+// OR
+// const others = document.querySelector(`#others`);
 // console.log(others);
 
 // 7b. Use innerHTML to change the HTML to an h3 with the text of "Other favorites" inside of it
@@ -36,6 +43,9 @@ others.innerHTML= `<h3>Other favorites</h3>`
 
 // 8a. Select the a tag at the bottom of the HTML file and set it to a const variable called aTag.
 const aTag = document.querySelector(`a`);
+
+// OR
+// const aTag = document.getElementsByTagName(`a`);
 // console.log(aTag);
 
 // 8b. Change the href attribute to the following link "https://www.choosechicago.com/articles/food-drink/5-classic-chicago-foods/"
@@ -58,6 +68,9 @@ h4.innerText = "CHICAGO: A great place to eat!";
 const body = document.querySelector(`body`);
 body.prepend(h4);
 
+// OR
+// const body = document.querySelector(`body`).prepend(h4);
+
 // 12a. Using createElement, create an h5 element and set it to a const variable called h5
 const h5 = document.createElement(`h5`);
 
@@ -68,12 +81,18 @@ h5.innerText = "See you in the Windy City Sometime!";
 aTag.insertAdjacentElement(`afterend`, h5);
 
 // 13. Using remove, remove the "Jay's Beef" li (NOTE: You will need to select the li first)
-const firstLi = document.querySelector(`li`);
-firstLi.remove();
+document.querySelector(`ul > li`).remove();
+// OR 
+// const firstLi = document.querySelector(`li`);
+// firstLi.remove();
+
 
 //BONUS SECTION | BONUS SECTION
-// 14a. Select all the divs and set it to a const variable called divs.
+// 14a. Select all the divs and set them to a const variable called divs.
 const divs = document.querySelectorAll(`div`);
+
+// OR 
+// const div = document.getElementsByTagName(`div`);
 // console.log(divs);
 
 // 14b. Using classList, TOGGLE the "background" class on for all the divs (NOTE: You will need a loop to do this)
@@ -101,11 +120,11 @@ for (words of hungry.join(" ")){
   body.append(spanHungry);
 }
 
-
-//Not quite...
+// OR | using a for loop
+// const end = document.querySelector(`body`);
 // for (i = 0; i < hungry.length; i++){
-//   hungry.createElement(`span`);
-//   body.append(
-//     hungry[i].innerText = `${hungry[i]}`
-//     );
+//   const span = document.createElement(`span`);
+//   span.innerText = hungry[i];
+//   end.append(span);
 // }
+
